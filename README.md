@@ -4,14 +4,15 @@
 
 ##Mappa szerkezet:
 
-main(package)
-  Program.java
-modell(package)
-  KincsesLada.java
-nezet(package)
-  TalalosKerdes.java
-teszt(package)
-  Teszt.java
+main(package):<br />
+    Program.java<br />
+modell(package):<br />
+    TalalosKerdes.java<br />
+    KincsesLada.java<br />
+nezet(package):<br />
+    TalalosKerdes.java<br />
+teszt(package):<br />
+    Teszt.java<br />
   
   
 Kincseslada.java:
@@ -23,4 +24,13 @@ Kincseslada.java:
       szin : String
       allitas : String
       kincses_e : Boolean
+      
+TalalosKerdes.java:
+
+  TalalosKerdes class:
+  
+    Adat tagok:
+      kerdes : String
+      feladat : String
+      kincsesLadak : KincsesLada[3]
       
