@@ -1,6 +1,5 @@
 package main;
 
-import modell.KincsesLada;
 
 public class Program {
 

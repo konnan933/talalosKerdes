@@ -5,7 +5,7 @@ package modell;
 
 public class KincsesLada {
     private final String[] ALLITASOK = {"én rejtem a kincset", "nem én rejtem a kincset", "az arany hazudik"};
-    private final String[] SZINEK = {"arany","ezüst","bronz"};
+    public final static String[] SZINEK = {"arany","ezüst","bronz"};
     private String szin;
     private String allitas;
     private Boolean kincses_e;
