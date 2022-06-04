@@ -18,6 +18,19 @@ public class TalalosKerdes{
             this.kincsesLadak[i] = new KincsesLada(KincsesLada.SZINEK[i]);
         }
     }
+
+    public String getKerdes() {
+        return kerdes;
+    }
+
+    public String getFeladat() {
+        return feladat;
+    }
+
+    public KincsesLada[] getKincsesLadak() {
+        return kincsesLadak;
+    }
+    
     
     
 
