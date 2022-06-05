@@ -9,9 +9,6 @@ public class KincsesLada {
     private String szin;
     private String allitas;
     private Boolean kincses_e;
-
-    
-    
     
     public KincsesLada(String szin) {
         setSzin(szin);
@@ -56,9 +53,7 @@ public class KincsesLada {
 
     public Boolean getKincses_e() {
         return kincses_e;
-    }
-    
-    
+    }  
     @Override
     public String toString() {
         return "KincsesLada{" + "szin=" + szin + ", allitas=" + allitas + ", kincses_e=" + kincses_e + '}';

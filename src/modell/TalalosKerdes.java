@@ -29,9 +29,6 @@ public class TalalosKerdes{
 
     public KincsesLada[] getKincsesLadak() {
         return kincsesLadak;
-    }
-    
-    
-    
+    }  
 
 }
