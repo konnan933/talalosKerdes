@@ -3,13 +3,11 @@ package modell;
 
 public class TalalosKerdes{
     
-    private String kerdes;
-    private String feladat;
+    private final static String KERDES = "3 láda közül az egyik rejti a kincset. Mindegyiken van egy felirat , de csak az egyik láda állítása igaz!";
+    private final static String FELADAT = "Találd ki hol van a kincs! Kattints a megfelelő ládára";
     private KincsesLada[] kincsesLadak = new KincsesLada[3];
 
-    public TalalosKerdes(String kerdes, String feladat) {
-        this.kerdes = kerdes;
-        this.feladat = feladat;
+    public TalalosKerdes() {
         setKincsesLadak();
     }
 
@@ -19,13 +17,6 @@ public class TalalosKerdes{
         }
     }
 
-    public String getKerdes() {
-        return kerdes;
-    }
-
-    public String getFeladat() {
-        return feladat;
-    }
 
     public KincsesLada[] getKincsesLadak() {
         return kincsesLadak;
