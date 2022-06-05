@@ -20,6 +20,8 @@ public class TalalosKerdesFrame extends javax.swing.JFrame {
     public TalalosKerdesFrame() {
         initComponents();
         cimekLada();
+        allitasok();
+        feladat_kerdes();
     }
 
     @SuppressWarnings("unchecked")
@@ -37,6 +39,8 @@ public class TalalosKerdesFrame extends javax.swing.JFrame {
         ezustAllitas = new javax.swing.JLabel();
         bronzAllitas = new javax.swing.JLabel();
         kerdesHely = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        feladat_hely = new javax.swing.JLabel();
         vezerlesPanel = new javax.swing.JPanel();
         felfedBtn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -96,6 +100,8 @@ public class TalalosKerdesFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel8.setText("Feladat:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -107,7 +113,11 @@ public class TalalosKerdesFrame extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(kerdesHely, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(allitasokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(allitasokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(feladat_hely, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -115,10 +125,12 @@ public class TalalosKerdesFrame extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 64, Short.MAX_VALUE))
-                    .addComponent(kerdesHely, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addComponent(kerdesHely, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(feladat_hely))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(allitasokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
@@ -249,21 +261,17 @@ public class TalalosKerdesFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 737, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 507, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(15, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -366,8 +374,16 @@ public class TalalosKerdesFrame extends javax.swing.JFrame {
             ladaGombok[i].setBorder(borderTitle);
         }
     }
-
-
+    private void allitasok(){
+        aranyAllitas.setText(talalosKerdes.getKincsesLadak()[0].getAllitas());
+        ezustAllitas.setText(talalosKerdes.getKincsesLadak()[1].getAllitas());
+        bronzAllitas.setText(talalosKerdes.getKincsesLadak()[2].getAllitas());
+        
+    }
+    private void feladat_kerdes(){
+        feladat_hely.setText(talalosKerdes.getFELADAT());
+        kerdesHely.setText(talalosKerdes.getKERDES());
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel allitasokPanel;
     private javax.swing.JLabel aranyAllitas;
@@ -376,12 +392,14 @@ public class TalalosKerdesFrame extends javax.swing.JFrame {
     private javax.swing.JButton bronzBtn;
     private javax.swing.JLabel ezustAllitas;
     private javax.swing.JButton ezustBtn;
+    private javax.swing.JLabel feladat_hely;
     private javax.swing.JButton felfedBtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel kerdesHely;
